@@ -14,15 +14,15 @@ class Map:
         head = self.snake[0]
         next_cell = (head[0] + direction[0], head[1] + direction[1])
         if next_cell in self.walls + self.snake:
-            return len(self.snake)
+            return len(self.snake), True
 
         if head == self.apple:
-            pass
+            self.apple = (random.randint(1,self.w-2), random.randint(1,self.h-2))
         else:
             self.snake.pop()
 
         self.snake = [next_cell] + self.snake
-
+        return len(self.snake), False
 
         
 

@@ -1,4 +1,4 @@
-from map import *
+from map import * 
 from utils import *
 import random
 
