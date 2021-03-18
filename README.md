@@ -1,4 +1,9 @@
 # big_brain_snake
 
-### snake with human input
-![rys](demo.gif)
+## snake game controlled by neural network trained with genetic (and biological) algorithms
+
+### by [tmek1244](http://github.com/tmek1244) & [WojtAcht](http://github.com/WojtAcht) & [michlampert](http://github.com/michlampert)
+
+| | |
+| -- | -- |
+|snake with human input <br/> ![rys](demo.gif) | snake with random moves <br/> ![rys](demo1.gif) |

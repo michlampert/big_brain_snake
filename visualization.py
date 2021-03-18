@@ -79,7 +79,7 @@ class Visualization(threading.Thread):
 map = Map()
 brain = Brain()
 
-V = Visualization(map, save_frames=True)
+V = Visualization(map, brain, save_frames=True)
 V.start()
 
 # import os
