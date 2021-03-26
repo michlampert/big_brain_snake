@@ -61,17 +61,17 @@ class Map:
 
         return wall_distances + snake_distances + list(apple_distance)
 
-    def calculte_expected_result(brain,w=20,h=20):
+    def calculte_expected_result(brain,w=20,h=20, probe=100):
         """return expected points result with usage of this brain"""
         result = 0
-        for i in range(100):
+        for i in range(probe):
             map = Map(w,h)
             end = False
             while not end:
                 dir = brain.predict_move(map)
                 points, end = map.move(dir)
             result += points
-        return result/100
+        return result/probe
 
 if __name__ == "__main__":
     brain = Brain()
