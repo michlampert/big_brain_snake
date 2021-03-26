@@ -1,6 +1,7 @@
 from brain import *
 from utils import *
 import random
+from itertools import count
 
 class Map:
     def __init__(self, w = 20, h = 20):
@@ -28,5 +29,31 @@ class Map:
 
     def restart(self):
         self.snake = [(random.randint(1,self.w-2), random.randint(1,self.h-2))]
+
+    def get_distances(self):
+        """
+        return list of distances to walls [^,\,<,/,v,\,>,/], snake [^,\,<,/,v,\,>,/] and apple [x,y]
+        """
+
+        wall_distances = []
+        for dir in ALL_DIRECTIONS:
+            for i in count(0):
+                v = mul_vector(dir, i)
+                if add_vectors(self.snake[0], v) in self.walls:
+                    wall_distances.append(i)
+                    break
+
+        snake_distances = []
+        for dir in ALL_DIRECTIONS:
+            for i in count(0):
+                v = mul_vector(dir, i)
+                if add_vectors(self.snake[0], v) in self.walls + self.snake[1:]:
+                    snake_distances.append(i)
+                    break
+
+        apple_distance = add_vectors(self.apple, mul_vector(self.snake[0],-1))
+
+        return wall_distances + snake_distances + list(apple_distance)
+
         
 

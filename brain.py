@@ -3,7 +3,7 @@ from utils import *
 import random
 
 class Brain:
-    def __init__(self):
+    def __init__(self, genotype=None):
         pass
 
     def predict_move(self, map:Map):

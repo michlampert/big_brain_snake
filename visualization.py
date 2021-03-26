@@ -64,6 +64,7 @@ class Visualization(threading.Thread):
 
             for cell in self.map.snake:
                 pygame.draw.rect(screen, (0, 200, 0), (cell[0]*20, cell[1]*20, 20,20))
+
             cell = self.map.snake[0]
             pygame.draw.rect(screen, (0, 150, 0), (cell[0]*20, cell[1]*20, 20,20))
                 
@@ -72,6 +73,9 @@ class Visualization(threading.Thread):
 
             textsurface = myfont.render(str(points), False, (255, 255, 255))
             screen.blit(textsurface,(5,0))
+
+            for cell in [add_vectors(self.map.snake[0],mul_vector(v, i)) for i, v in zip(self.map.get_distances(), ALL_DIRECTIONS*2)]:
+                pygame.draw.circle(screen, (0,0, 255), (cell[0]*20 + 10, cell[1]*20 + 10), 5)
 
             if self.save_frames: 
                 pygame.image.save(screen, f"tmp/frame{next(frames)}.png")
