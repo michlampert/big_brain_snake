@@ -6,4 +6,4 @@
 
 | | |
 | -- | -- |
-|snake with human input <br/> ![rys](demo.gif) | snake with random moves <br/> ![rys](demo1.gif) |
+|snake with human input <br/> ![rys](demos/demo.gif) | snake with random moves <br/> ![rys](demos/demo1.gif) |

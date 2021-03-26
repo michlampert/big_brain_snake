@@ -11,18 +11,22 @@ class Map:
         self.apple = (random.randint(1,w-2), random.randint(1,h-2))
 
     def move(self, direction):
-        head = self.snake[0]
-        next_cell = (head[0] + direction[0], head[1] + direction[1])
-        if next_cell in self.walls + self.snake:
-            return len(self.snake), True
+        """return actual poins and game_over flag"""
+        next_cell = (self.snake[0][0] + direction[0], self.snake[0][1] + direction[1])
 
-        if head == self.apple:
-            self.apple = (random.randint(1,self.w-2), random.randint(1,self.h-2))
+        if self.snake[0] in self.walls + self.snake[1:]:
+            return len(self.snake) - 1, True
+
+        if self.apple in self.snake:
+            while self.apple in self.snake:
+                self.apple = (random.randint(1,self.w-2), random.randint(1,self.h-2))
         else:
             self.snake.pop()
 
         self.snake = [next_cell] + self.snake
-        return len(self.snake), False
+        return len(self.snake) - 1, False
 
+    def restart(self):
+        self.snake = [(random.randint(1,self.w-2), random.randint(1,self.h-2))]
         
 
