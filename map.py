@@ -55,5 +55,20 @@ class Map:
 
         return wall_distances + snake_distances + list(apple_distance)
 
+    def calculte_expected_result(brain,w=20,h=20):
+        result = 0
+        for i in range(100):
+            map = Map(w,h)
+            end = False
+            while not end:
+                dir = brain.predict_move(map)
+                points, end = map.move(dir)
+            result += points
+        return result/100
+
+if __name__ == "__main__":
+    brain = Brain()
+    print(Map.calculte_expected_result(brain))
+
         
 
