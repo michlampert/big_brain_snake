@@ -17,10 +17,10 @@ class Map:
         next_cell = (self.snake[0][0] + direction[0], self.snake[0][1] + direction[1])
 
         if self.snake[0] in self.walls + self.snake[1:]:
-            return len(self.snake) - 1 + (100*self.live//(self.w * self.h))/100, True
+            return len(self.snake) - 1 + (50*self.live//(self.w * self.h))/100, True
 
         if self.live == (self.w * self.h):
-            return len(self.snake) - 1 + (100*self.live//(self.w * self.h))/100, True  
+            return len(self.snake) - 1 + (50*self.live//(self.w * self.h))/100, True  
 
         if self.apple in self.snake:
             self.live = 0
@@ -31,7 +31,7 @@ class Map:
 
         self.snake = [next_cell] + self.snake
         self.live += 1
-        return len(self.snake) - 1 + (100*self.live//(self.w * self.h))/100, False
+        return len(self.snake) - 1 + (50*self.live//(self.w * self.h))/100, False
 
     def restart(self):
         self.snake = [(random.randint(1,self.w-2), random.randint(1,self.h-2))]
@@ -39,7 +39,7 @@ class Map:
         self.live = 0
 
     def get_distances(self):
-        """return list of distances to walls [^,\,<,/,v,\,>,/], snake [^,\,<,/,v,\,>,/] and apple [x,y]"""
+        """return list of distances to walls [<,\,^,/,>,\\,v,/], snake [<,\,^,/,>,\\,v,/] and apple [x,y]"""
 
         wall_distances = []
         for dir in ALL_DIRECTIONS:
@@ -61,7 +61,7 @@ class Map:
 
         return wall_distances + snake_distances + list(apple_distance)
 
-    def calculte_expected_result(brain,w=20,h=20, probe=100):
+    def calculte_expected_result(brain, w=20, h=20, probe=100):
         """return expected points result with usage of this brain"""
         result = 0
         for i in range(probe):

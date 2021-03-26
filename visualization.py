@@ -68,14 +68,14 @@ class Visualization(threading.Thread):
             cell = self.map.snake[0]
             pygame.draw.rect(screen, (0, 150, 0), (cell[0]*20, cell[1]*20, 20,20))
                 
-            cell = (self.map.snake[0][0] + dir[0], self.map.snake[0][1] + dir[1])
-            pygame.draw.circle(screen, (240, 240, 240), (cell[0]*20 + 10, cell[1]*20 + 10), 5)
+            # cell = (self.map.snake[0][0] + dir[0], self.map.snake[0][1] + dir[1])
+            # pygame.draw.circle(screen, (240, 240, 240), (cell[0]*20 + 10, cell[1]*20 + 10), 5)
 
-            textsurface = myfont.render(str(points), False, (255, 255, 255))
+            # for cell in [add_vectors(self.map.snake[0],mul_vector(v, i)) for i, v in zip(self.map.get_distances(), ALL_DIRECTIONS*2)]:
+            #     pygame.draw.circle(screen, (0,0, 255), (cell[0]*20 + 10, cell[1]*20 + 10), 5)
+
+            textsurface = myfont.render(str((points)), False, (255, 255, 255))
             screen.blit(textsurface,(5,0))
-
-            for cell in [add_vectors(self.map.snake[0],mul_vector(v, i)) for i, v in zip(self.map.get_distances(), ALL_DIRECTIONS*2)]:
-                pygame.draw.circle(screen, (0,0, 255), (cell[0]*20 + 10, cell[1]*20 + 10), 5)
 
             if self.save_frames: 
                 pygame.image.save(screen, f"tmp/frame{next(frames)}.png")
@@ -93,12 +93,14 @@ class Visualization(threading.Thread):
                     break
             time.sleep(1/10)
 
-map = Map()
-brain = Brain()
-brain = HumanInput()
+if __name__ == "__main__":
 
-V = Visualization(map, brain, save_frames=False)
-V.start()
+    map = Map()
+    brain = Brain()
+    brain = HumanInput()
+
+    V = Visualization(map, brain, save_frames=False)
+    V.start()
 
 """
 to convert frames into .gif:
