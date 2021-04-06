@@ -47,8 +47,7 @@ class Map:
         return apple
 
     def new_snake(self):
-        snake = [(random.randint(2,self.w-3), random.randint(2,self.h-3))]*3
-        # snake.append(add_vectors(snake[0], mul_vector(self.last_move, -1)))
+        snake = [(random.randint(2,self.w-3), random.randint(2,self.h-3))]*3 #makes snake len. 3 at the beggining
         return snake
 
     def get_distances(self):

@@ -1,11 +1,9 @@
 import random
 
 class Matrix:
-    def __init__(self, m=None, *,w=None, h=None, string=None):
-        if string:
-            m = eval(string)
-        elif m is None:
-            m = [[random.random()*2 - 1 for c in range(w)] for r in range(h)]
+    def __init__(self, m=None, *,w=None, h=None):
+        if not m: m = [[random.random()*2 - 1 for c in range(w)] for r in range(h)]
+
         self.m = m
         self.h = len(self.m)
         self.w = len(self.m[0])
@@ -19,10 +17,6 @@ class Matrix:
 
     def T(self):
         return Matrix(list(map(list, zip(*self.m))))
-
-    def mix(self, other):
-        result = Matrix([[random.choice([self.m[r][c], other.m[r][c]])*(random.random()*0.1 + random.random()*0.1 + 0.9) for c in range(self.w)] for r in range(self.h)])
-        return result
 
 if __name__ == "__main__":
     m1 = Matrix(w=2, h=2)

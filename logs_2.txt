@@ -1,0 +1,20 @@
+gen 0 best score: 1.2   |       gen 0 best 32 scores mean: 1.0459999999999998   |       gen 0 mean: 0.25386
+gen 1 best score: 1.424 |       gen 1 best 32 scores mean: 1.3023999999999998   |       gen 1 mean: 0.9129999999999997
+gen 2 best score: 4.604 |       gen 2 best 32 scores mean: 1.9706       |       gen 2 mean: 1.0876600000000005
+gen 3 best score: 4.3420000000000005    |       gen 3 best 32 scores mean: 2.2558000000000002   |gen 3 mean: 0.9685400000000003
+gen 4 best score: 17.084        |       gen 4 best 32 scores mean: 5.8628       |       gen 4 mean: 1.6574799999999994
+gen 5 best score: 12.8  |       gen 5 best 32 scores mean: 6.731399999999999    |       gen 5 mean: 2.3665000000000003
+gen 6 best score: 14.803999999999998    |       gen 6 best 32 scores mean: 9.733600000000001    |gen 6 mean: 3.6521800000000013
+gen 7 best score: 15.001999999999999    |       gen 7 best 32 scores mean: 12.2732      |       gen 7 mean: 5.134420000000005
+gen 8 best score: 16.802        |       gen 8 best 32 scores mean: 14.1654      |       gen 8 mean: 6.754879999999998
+gen 9 best score: 19.404000000000003    |       gen 9 best 32 scores mean: 15.011199999999999   |gen 9 mean: 7.059600000000002
+gen 10 best score: 22.419999999999998   |       gen 10 best 32 scores mean: 17.3148     |       gen 10 mean: 8.758859999999999
+gen 11 best score: 17.607999999999997   |       gen 11 best 32 scores mean: 15.602599999999999  |gen 11 mean: 8.451079999999996
+gen 12 best score: 22.244       |       gen 12 best 32 scores mean: 17.105400000000003  |       gen 12 mean: 9.92866
+gen 13 best score: 20.948       |       gen 13 best 32 scores mean: 17.003800000000002  |       gen 13 mean: 8.839980000000002
+gen 14 best score: 26.082       |       gen 14 best 32 scores mean: 19.357400000000005  |       gen 14 mean: 9.978659999999998
+gen 15 best score: 23.528       |       gen 15 best 32 scores mean: 19.518400000000007  |       gen 15 mean: 10.685239999999995
+gen 16 best score: 21.61        |       gen 16 best 32 scores mean: 17.950400000000002  |       gen 16 mean: 9.233759999999998
+gen 17 best score: 19.416       |       gen 17 best 32 scores mean: 17.087600000000002  |       gen 17 mean: 8.465900000000001
+gen 18 best score: 19.674       |       gen 18 best 32 scores mean: 17.657000000000004  |       gen 18 mean: 9.474000000000004
+gen 19 best score: 20.445999999999998   |       gen 19 best 32 scores mean: 16.885799999999996  |gen 19 mean: 9.685679999999994
