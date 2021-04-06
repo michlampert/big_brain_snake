@@ -9,7 +9,7 @@ class Brain:
     def __init__(self, genotype=None):
         if genotype:
             if isinstance(genotype, list):
-                self.genotype = Matrix([[i] for i in genotype])
+                self.genotype = Matrix(genotype)
             elif isinstance(genotype, Matrix):
                 self.genotype = genotype
         else:
@@ -26,20 +26,18 @@ class Brain:
         # return random.choice([LEFT, UP, RIGHT, DOWN])
 
     def cross(self, other):
-        pass
+        return Brain(self.genotype.mix(other.genotype))
 
     def mutate(self):
         pass
-    
-    # TODO
-    def save(self, filename):
-        with open(filename, "w+") as f:
-            f.write(pickle.dumps(self.genotype))
 
-    # TODO
-    def from_file(self, filename):
-        with open(filename) as f:
-            self.genotype = pickle.loads(f.read())
+    def save(self, filename):
+        with open(filename, "wb") as f:
+            pickle.dump(self, f)
+
+    def from_file(filename):
+        with open(filename, "rb") as f:
+            return pickle.load(f)
 
 if __name__ == "__main__":
     map = Map()

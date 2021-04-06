@@ -6,4 +6,5 @@
 
 | | |
 | -- | -- |
-|snake with human input <br/> ![rys](demos/demo.gif) | snake with random moves <br/> ![rys](demos/demo1.gif) |
+| <center>snake with human input <br/> ![rys](demos/demo.gif)</center> | <center>snake with random moves <br/> ![rys](demos/demo1.gif)</center> |
+| ![rys](demos/demo_first_implementation.gif) | <center>first working implementation <br/> 4x18 input neurons <br/> 100th generation</center>|

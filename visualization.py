@@ -91,7 +91,7 @@ class Visualization(threading.Thread):
                 else:
                     print(points)
                     break
-            time.sleep(1/10)
+            time.sleep(1/5)
 
 if __name__ == "__main__":
 
