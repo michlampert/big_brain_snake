@@ -2,7 +2,7 @@ from map import *
 from brain import *
 from visualization import *
 
-brain = Brain.from_file("saved_brains_2/gen_19")
+brain = Brain.from_file("saved_brains/saved_brains_7/gen_82")
 map = Map()
 # print(*brain.genotype.m)
 

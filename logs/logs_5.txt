@@ -1,0 +1,100 @@
+gen 0 best score: 3.9   |       gen 0 best 10 scores mean: 1.41 |       gen 0 mean: 0.2898399999999999
+gen 1 best score: 2.86  |       gen 1 best 10 scores mean: 1.8354       |       gen 1 mean: 0.9780399999999999
+gen 2 best score: 4.6   |       gen 2 best 10 scores mean: 3.5066       |       gen 2 mean: 1.3391800000000003
+gen 3 best score: 7.2700000000000005    |       gen 3 best 10 scores mean: 4.257600000000001    |gen 3 mean: 1.4137400000000013
+gen 4 best score: 5.726000000000001     |       gen 4 best 10 scores mean: 4.976000000000001    |gen 4 mean: 2.153
+gen 5 best score: 9.343999999999998     |       gen 5 best 10 scores mean: 6.391599999999999    |gen 5 mean: 2.938919999999998
+gen 6 best score: 7.553999999999999     |       gen 6 best 10 scores mean: 6.7498000000000005   |gen 6 mean: 3.488660000000001
+gen 7 best score: 7.336 |       gen 7 best 10 scores mean: 6.7598       |       gen 7 mean: 4.28782
+gen 8 best score: 7.853999999999999     |       gen 8 best 10 scores mean: 6.966799999999999    |gen 8 mean: 4.192359999999997
+gen 9 best score: 7.936 |       gen 9 best 10 scores mean: 7.252999999999998    |       gen 9 mean: 4.448479999999998
+gen 10 best score: 8.052        |       gen 10 best 10 scores mean: 7.531000000000001   |       gen 10 mean: 4.841259999999998
+gen 11 best score: 9.388        |       gen 11 best 10 scores mean: 7.1697999999999995  |       gen 11 mean: 4.6240999999999985
+gen 12 best score: 8.559999999999999    |       gen 12 best 10 scores mean: 7.328399999999999   |gen 12 mean: 4.416640000000001
+gen 13 best score: 7.732000000000001    |       gen 13 best 10 scores mean: 6.877       |       gen 13 mean: 4.57406
+gen 14 best score: 8.652        |       gen 14 best 10 scores mean: 7.851799999999999   |       gen 14 mean: 5.137259999999999
+gen 15 best score: 8.418        |       gen 15 best 10 scores mean: 7.260599999999999   |       gen 15 mean: 4.710140000000001
+gen 16 best score: 8.511999999999999    |       gen 16 best 10 scores mean: 7.426399999999999   |gen 16 mean: 4.647200000000001
+gen 17 best score: 9.156        |       gen 17 best 10 scores mean: 7.518599999999999   |       gen 17 mean: 4.240320000000001
+gen 18 best score: 12.276       |       gen 18 best 10 scores mean: 8.1402      |       gen 18 mean: 4.7059999999999995
+gen 19 best score: 8.274000000000001    |       gen 19 best 10 scores mean: 7.070200000000002   |gen 19 mean: 4.320860000000001
+gen 20 best score: 9.27 |       gen 20 best 10 scores mean: 7.7378      |       gen 20 mean: 4.496700000000001
+gen 21 best score: 8.562        |       gen 21 best 10 scores mean: 7.6598      |       gen 21 mean: 4.800820000000001
+gen 22 best score: 8.676        |       gen 22 best 10 scores mean: 7.7574      |       gen 22 mean: 4.857659999999999
+gen 23 best score: 8.354        |       gen 23 best 10 scores mean: 7.364400000000001   |       gen 23 mean: 4.741360000000001
+gen 24 best score: 7.325999999999999    |       gen 24 best 10 scores mean: 7.013400000000002   |gen 24 mean: 4.410040000000001
+gen 25 best score: 8.034        |       gen 25 best 10 scores mean: 7.0834      |       gen 25 mean: 4.7313399999999985
+gen 26 best score: 9.419999999999998    |       gen 26 best 10 scores mean: 7.663999999999999   |gen 26 mean: 4.837119999999998
+gen 27 best score: 8.124        |       gen 27 best 10 scores mean: 7.591799999999999   |       gen 27 mean: 4.8570400000000005
+gen 28 best score: 9.078        |       gen 28 best 10 scores mean: 7.7475999999999985  |       gen 28 mean: 4.684179999999999
+gen 29 best score: 8.892        |       gen 29 best 10 scores mean: 8.069799999999999   |       gen 29 mean: 4.807359999999998
+gen 30 best score: 8.706        |       gen 30 best 10 scores mean: 7.7928      |       gen 30 mean: 4.479940000000001
+gen 31 best score: 8.524000000000001    |       gen 31 best 10 scores mean: 7.580800000000001   |gen 31 mean: 4.773119999999999
+gen 32 best score: 9.51 |       gen 32 best 10 scores mean: 8.3528      |       gen 32 mean: 4.835679999999999
+gen 33 best score: 9.408        |       gen 33 best 10 scores mean: 8.0358      |       gen 33 mean: 5.12052
+gen 34 best score: 8.808        |       gen 34 best 10 scores mean: 8.015799999999999   |       gen 34 mean: 5.177240000000001
+gen 35 best score: 10.867999999999999   |       gen 35 best 10 scores mean: 7.904999999999999   |gen 35 mean: 4.781499999999999
+gen 36 best score: 8.652        |       gen 36 best 10 scores mean: 7.526400000000001   |       gen 36 mean: 4.746500000000001
+gen 37 best score: 9.608        |       gen 37 best 10 scores mean: 7.642599999999999   |       gen 37 mean: 4.6829600000000005
+gen 38 best score: 9.68 |       gen 38 best 10 scores mean: 8.031600000000001   |       gen 38 mean: 4.793239999999999
+gen 39 best score: 9.886        |       gen 39 best 10 scores mean: 7.8732      |       gen 39 mean: 4.5416599999999985
+gen 40 best score: 8.632        |       gen 40 best 10 scores mean: 7.5569999999999995  |       gen 40 mean: 4.7253
+gen 41 best score: 10.709999999999999   |       gen 41 best 10 scores mean: 8.3638      |       gen 41 mean: 5.22328
+gen 42 best score: 9.872        |       gen 42 best 10 scores mean: 7.963199999999999   |       gen 42 mean: 4.912539999999999
+gen 43 best score: 11.244       |       gen 43 best 10 scores mean: 8.3748      |       gen 43 mean: 5.153099999999999
+gen 44 best score: 9.011999999999999    |       gen 44 best 10 scores mean: 7.3394      |       gen 44 mean: 4.815079999999999
+gen 45 best score: 9.49 |       gen 45 best 10 scores mean: 7.6945999999999986  |       gen 45 mean: 4.59904
+gen 46 best score: 10.846       |       gen 46 best 10 scores mean: 8.677599999999998   |       gen 46 mean: 4.996279999999999
+gen 47 best score: 10.934000000000001   |       gen 47 best 10 scores mean: 8.463399999999996   |gen 47 mean: 5.1059
+gen 48 best score: 9.494        |       gen 48 best 10 scores mean: 8.43        |       gen 48 mean: 4.864539999999998
+gen 49 best score: 9.294        |       gen 49 best 10 scores mean: 8.4436      |       gen 49 mean: 5.044839999999997
+gen 50 best score: 10.899999999999999   |       gen 50 best 10 scores mean: 8.1264      |       gen 50 mean: 4.937959999999999
+gen 51 best score: 11.678       |       gen 51 best 10 scores mean: 8.4436      |       gen 51 mean: 5.10314
+gen 52 best score: 11.922       |       gen 52 best 10 scores mean: 8.929199999999998   |       gen 52 mean: 5.171940000000001
+gen 53 best score: 11.202       |       gen 53 best 10 scores mean: 8.950199999999999   |       gen 53 mean: 4.983099999999999
+gen 54 best score: 9.934000000000001    |       gen 54 best 10 scores mean: 8.4822      |       gen 54 mean: 4.938520000000001
+gen 55 best score: 9.514        |       gen 55 best 10 scores mean: 8.4404      |       gen 55 mean: 4.9587200000000005
+gen 56 best score: 9.477999999999998    |       gen 56 best 10 scores mean: 8.475399999999997   |gen 56 mean: 5.09092
+gen 57 best score: 9.553999999999998    |       gen 57 best 10 scores mean: 7.767599999999999   |gen 57 mean: 5.195980000000002
+gen 58 best score: 10.669999999999998   |       gen 58 best 10 scores mean: 8.634599999999999   |gen 58 mean: 5.256419999999999
+gen 59 best score: 11.298       |       gen 59 best 10 scores mean: 9.796       |       gen 59 mean: 5.809399999999998
+gen 60 best score: 9.663999999999998    |       gen 60 best 10 scores mean: 8.7972      |       gen 60 mean: 5.313379999999999
+gen 61 best score: 9.238        |       gen 61 best 10 scores mean: 8.3396      |       gen 61 mean: 5.379919999999995
+gen 62 best score: 10.006       |       gen 62 best 10 scores mean: 8.6922      |       gen 62 mean: 5.270820000000002
+gen 63 best score: 10.258       |       gen 63 best 10 scores mean: 8.549399999999999   |       gen 63 mean: 5.439
+gen 64 best score: 10.524       |       gen 64 best 10 scores mean: 8.6014      |       gen 64 mean: 5.138920000000001
+gen 65 best score: 9.841999999999999    |       gen 65 best 10 scores mean: 8.419599999999999   |gen 65 mean: 5.063059999999998
+gen 66 best score: 9.203999999999999    |       gen 66 best 10 scores mean: 8.394199999999998   |gen 66 mean: 5.367140000000001
+gen 67 best score: 12.008       |       gen 67 best 10 scores mean: 8.9948      |       gen 67 mean: 5.260999999999997
+gen 68 best score: 10.58        |       gen 68 best 10 scores mean: 9.1106      |       gen 68 mean: 5.070579999999998
+gen 69 best score: 9.248000000000001    |       gen 69 best 10 scores mean: 8.3422      |       gen 69 mean: 5.121999999999999
+gen 70 best score: 8.916        |       gen 70 best 10 scores mean: 7.7204      |       gen 70 mean: 5.136800000000001
+gen 71 best score: 10.416       |       gen 71 best 10 scores mean: 8.812       |       gen 71 mean: 5.210279999999998
+gen 72 best score: 9.218        |       gen 72 best 10 scores mean: 8.309800000000001   |       gen 72 mean: 4.5400599999999995
+gen 73 best score: 10.604       |       gen 73 best 10 scores mean: 8.121599999999997   |       gen 73 mean: 5.01998
+gen 74 best score: 11.224       |       gen 74 best 10 scores mean: 8.869       |       gen 74 mean: 5.021500000000001
+gen 75 best score: 12.458       |       gen 75 best 10 scores mean: 9.1672      |       gen 75 mean: 5.22234
+gen 76 best score: 10.386000000000001   |       gen 76 best 10 scores mean: 8.8462      |       gen 76 mean: 5.302939999999995
+gen 77 best score: 11.524000000000001   |       gen 77 best 10 scores mean: 9.4952      |       gen 77 mean: 5.371659999999997
+gen 78 best score: 9.838        |       gen 78 best 10 scores mean: 8.8824      |       gen 78 mean: 5.177060000000001
+gen 79 best score: 12.282       |       gen 79 best 10 scores mean: 9.247200000000001   |       gen 79 mean: 5.770419999999999
+gen 80 best score: 10.526       |       gen 80 best 10 scores mean: 9.764599999999998   |       gen 80 mean: 5.6423799999999975
+gen 81 best score: 9.808        |       gen 81 best 10 scores mean: 8.786999999999999   |       gen 81 mean: 5.469159999999999
+gen 82 best score: 12.214000000000002   |       gen 82 best 10 scores mean: 9.656       |       gen 82 mean: 5.421480000000002
+gen 83 best score: 10.669999999999998   |       gen 83 best 10 scores mean: 9.361199999999998   |gen 83 mean: 5.494699999999997
+gen 84 best score: 13.910000000000002   |       gen 84 best 10 scores mean: 9.732000000000003   |gen 84 mean: 5.457300000000003
+gen 85 best score: 11.453999999999999   |       gen 85 best 10 scores mean: 9.831399999999999   |gen 85 mean: 5.786419999999996
+gen 86 best score: 13.808000000000002   |       gen 86 best 10 scores mean: 10.2068     |       gen 86 mean: 5.94194
+gen 87 best score: 12.008       |       gen 87 best 10 scores mean: 9.5474      |       gen 87 mean: 5.709659999999997
+gen 88 best score: 10.847999999999999   |       gen 88 best 10 scores mean: 9.7106      |       gen 88 mean: 5.541179999999997
+gen 89 best score: 10.268       |       gen 89 best 10 scores mean: 9.5036      |       gen 89 mean: 5.493939999999998
+gen 90 best score: 12.008000000000001   |       gen 90 best 10 scores mean: 9.432799999999999   |gen 90 mean: 5.4202200000000005
+gen 91 best score: 11.144       |       gen 91 best 10 scores mean: 9.646199999999999   |       gen 91 mean: 5.356639999999999
+gen 92 best score: 10.069999999999999   |       gen 92 best 10 scores mean: 9.243599999999999   |gen 92 mean: 5.961339999999999
+gen 93 best score: 10.559999999999999   |       gen 93 best 10 scores mean: 9.376       |       gen 93 mean: 5.785240000000003
+gen 94 best score: 12.809999999999999   |       gen 94 best 10 scores mean: 9.9932      |       gen 94 mean: 5.912259999999998
+gen 95 best score: 13.660000000000002   |       gen 95 best 10 scores mean: 10.508000000000001  |gen 95 mean: 6.092759999999995
+gen 96 best score: 12.604       |       gen 96 best 10 scores mean: 10.450800000000001  |       gen 96 mean: 6.011720000000002
+gen 97 best score: 11.809999999999999   |       gen 97 best 10 scores mean: 9.462999999999997   |gen 97 mean: 5.583319999999998
+gen 98 best score: 11.096       |       gen 98 best 10 scores mean: 9.6964      |       gen 98 mean: 5.526039999999998
+gen 99 best score: 12.876       |       gen 99 best 10 scores mean: 10.855599999999999  |       gen 99 mean: 6.156999999999997

@@ -2,6 +2,7 @@ from map import *
 from utils import *
 import random
 import pickle
+import math
 
 from matrix import *
 
@@ -41,6 +42,7 @@ class Brain:
 
     def predict_move(self, map):
         dist = map.get_distances()
+        dist = [(0 if not d else (d/abs(d))*math.sqrt(abs(d))) for d in dist]
         res = self.matrix * dist
         idx = -1
         for i in range(4):
@@ -48,8 +50,24 @@ class Brain:
                 idx = i
         return [LEFT, UP, RIGHT, DOWN][idx]
 
-    def cross(self, other):
-        return Brain([random.choice([g1,g2]) for g1,g2 in zip(self.genotype, other.genotype)])
+    @staticmethod
+    def random_gene(g1, g2):
+        return random.choice([g1,g2])
+
+    @staticmethod
+    def random_weighted_gene(g1, g2, ratio=2/3):
+        return (g1 if (random.random() < ratio) else g2)
+
+    @staticmethod
+    def between_gene(g1, g2):
+        return (g1+g2)/2
+
+    @staticmethod
+    def between_weighted_gene(g1, g2, ratio=2/3):
+        return g1*ratio + g2*(1-ratio)
+
+    def cross(self, other, new_gene_func = random_gene):
+        return Brain([new_gene_func(g1,g2) for g1,g2 in zip(self.genotype, other.genotype)])
 
     def mutate(self):
         return Brain([g * (0.90 + (random.random() + random.random())/10) for g in self.genotype])
