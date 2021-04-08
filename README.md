@@ -6,7 +6,8 @@
 
 | <img width="1000px"> | <img width="1000px"> |
 | -- | -- |
-| snake with human input <br/> <img src="demos/demo.gif" height="100%" width="auto"> | snake with random moves <br/> ![rys](demos/demo1.gif) |
+| snake with human input <br/> ![rys](demos/demo.gif) | snake with random moves <br/> ![rys](demos/demo1.gif) |
 | ![rys](demos/demo_first_implementation.gif) <br/> first implementation <br/> 4x18 input neurons <br/> each generation - 1024 snakes| ![rys](logs/logs_1.png)|
 | ![rys](demos/demo_second_implementation.gif) <br/> second implementation <br/> 12 input neurons with symmetry <br/> each generation - 100 snakes | ![rys](logs/logs_6.png)|
+| ![rys](demos/demo_third_implementation.gif) <br/> second implementation <br/> 12 input neurons with symmetry <br/> each generation - 100 snakes <br/> crossing with mean of two genes| ![rys](logs/logs_5.png)|
 | ![rys](demos/demo_fourth_implementation.gif) <br/> fourth implementation <br/> 12 input neurons with symmetry <br/> each generation - 100 snakes | ![rys](logs/logs_7.png)|

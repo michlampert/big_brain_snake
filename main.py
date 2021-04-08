@@ -21,34 +21,5 @@ for i in range(100):
 
     brains = [b1.cross(b2, new_gene_func = Brain.random_gene).mutate() for b1 in next_stage_brains for b2 in next_stage_brains if b1 is not b2] + next_stage_brains
 
-# brain = Brain.from_file("saved_brains/gen_5")
-# map = Map()
-# v = Visualization(map,brain)
-# v.start()
-# v.join()
-
-# brain = Brain.from_file("saved_brains/gen_6")
-# map = Map()
-# v = Visualization(map,brain)
-# v.start()
-# v.join()
-
-# brain = Brain.from_file("saved_brains/gen_7")
-# map = Map()
-# v = Visualization(map,brain)
-# v.start()
-# v.join()
-
-# brain = Brain.from_file("saved_brains/gen_8")
-# map = Map()
-# v = Visualization(map,brain)
-# v.start()
-# v.join()
-
-# brain = Brain.from_file("saved_brains/gen_9")
-# map = Map()
-# v = Visualization(map,brain)
-# v.start()
-# v.join()
 
 
