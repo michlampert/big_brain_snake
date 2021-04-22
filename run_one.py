@@ -2,7 +2,7 @@ from map import *
 from brain import *
 from visualization import *
 
-brain = Brain.from_file("saved_brains/saved_brains_7/gen_99")
+brain = Brain.from_file("saved_brains_8/gen_20")
 map = Map()
 
 v = Visualization(map, brain,save_frames=False)

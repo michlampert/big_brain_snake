@@ -7,7 +7,7 @@ import math
 from matrix import *
 
 class Brain:
-    def __init__(self, genotype=None):
+    def __init__(self, genotype=None, v=None):
         """
         Genotype should be 12 values vector approx. between -1 and 1.
         Note that weights in NN should have some symmetry, because:
@@ -26,6 +26,8 @@ class Brain:
             self.matrix = self.genotype_to_matrix()
         elif isinstance(genotype, Matrix):
             self.matrix = genotype
+        if not v: v = [random.random() * 2 - 1 for i in range(12)]
+        self.v = v
 
     def genotype_to_matrix(self):
         walls, snake, apple = self.genotype[:5], self.genotype[5:10], self.genotype[10:]
@@ -71,6 +73,15 @@ class Brain:
 
     def mutate(self):
         return Brain([g * (0.90 + (random.random() + random.random())/10) for g in self.genotype])
+
+    def pso(self, best, w=0.1, c1=0.1):
+        if self is best: return self
+        r1 = random.random()
+        v = [w*vx + c1*r1*(bx-gx) for vx,bx,gx in zip(self.v, best.genotype, self.genotype)]
+        genotype = [gx + vx for gx,vx in zip(self.genotype,self.v)]
+        return Brain(genotype,v)
+
+
 
     def save(self, filename):
         with open(filename, "wb") as f:
