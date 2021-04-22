@@ -21,7 +21,7 @@ brains = [Brain() for i in range(sqrt_num**2)]
 
 #     brains = [b1.cross(b2, new_gene_func = Brain.random_gene).mutate() for b1 in next_stage_brains for b2 in next_stage_brains if b1 is not b2] + next_stage_brains
 
-f = open("logs_8.txt")
+f = open("logs_8.txt", "w+")
 
 for i in range(100):
 
