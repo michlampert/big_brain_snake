@@ -4,4 +4,5 @@ tmp/*
 *.cpp
 *.html
 *.so
+*.o
 venv/
