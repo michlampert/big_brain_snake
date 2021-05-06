@@ -39,6 +39,8 @@ class Brain:
         if not v: v = [random.random() * 2 - 1 for i in range(12)]
         self.v = v
 
+        self.local_best = None
+
     @staticmethod
     def dist_to_matrix(dist):
         w_u, w_ru, w_r, w_rd, w_d, w_ld, w_l, w_lu, s_u, s_ru, s_r, s_rd, s_d, s_ld, s_l, s_lu, a_x, a_y = dist
@@ -94,12 +96,25 @@ class Brain:
         self.matrices = [m1*np.random.rand(*m1.shape) for m1 in self.matrices]
         return self
 
-    def pso(self, best, w=0.1, c1=1, c2=1):
+    def pso(self, best, w=0.1, c1=1.2, c2=1.2, result=0):
         if self is best: return self
-        r1,r2 = random.random(),random.random()
-        v = [w*vx + c1*r1*(bx-gx) for vx,bx,gx in zip(self.v, best.genotype, self.genotype)]
-        genotype = [gx + vx for gx,vx in zip(self.genotype,self.v)]
-        return Brain(genotype,v)
+
+        if self.local_best:
+            r, _ = self.local_best
+            if r<result:
+                self.local_best = result, self.matrices
+        else:
+            self.local_best = result, self.matrices
+
+        _, local_best_matrices = self.local_best
+        global_best_matrices = best.matrices
+        
+        r1, r2 = random.random(), random.random()
+
+        self.v = [m_v * w + m_lb * r1 * c1 + m_gb * r2 * c2 for m_v, m_lb, m_gb in zip(self.v, local_best_matrices, global_best_matrices)]
+        self.matrices = [m_m - m_v for m_m, m_v in zip(self.matrices, self.v)]
+        
+        return self
 
     def save(self, filename):
         with open(filename, "wb") as f:
