@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-for i in [14]:
+for i in [14,15,16,18,20,22]:
 
     filename = f"logs_{i}"
 
