@@ -12,7 +12,7 @@ def sqrt(x): return np.sqrt(np.abs(x)) * np.sign(x)
 
 def sigmoid(x): return 1/(1-np.exp(-x))
 
-def relu(x): return x if x>0 else 0
+def relu(x): return x * (x > 0)
 
 class Brain:
     def __init__(self, matrices=None, functions=None, v=None):
@@ -25,13 +25,13 @@ class Brain:
         (https://en.wikipedia.org/wiki/Curse_of_dimensionality)
         """
 
-        shapes = [(12,4), (6,4), (4,1)]
+        shapes = [(12,6), (6,4), (4,1)]
 
         if not matrices:
             matrices = [np.random.rand(*shape)*2-1 for shape in shapes]
 
         if not functions:
-            functions = [sqrt, relu, sigmoid]
+            functions = [sqrt, sigmoid, sigmoid]
 
         self.matrices = matrices
         self.functions = functions
