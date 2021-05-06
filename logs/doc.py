@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-for i in [8,10,11]:
+for i in [13]:
 
     filename = f"logs_{i}"
 
@@ -10,7 +10,7 @@ for i in [8,10,11]:
         for line in f:
             t = line.replace("|"," ").replace("\t", "").replace("\n","").split(" ")
             t = tuple(float(el) for el in t if el.replace(".","").isdigit())
-            t = (t[1],t[4],t[6])
+            # t = (t[1],t[4],t[6])
             result.append(t)
 
     df = pd.DataFrame(result, columns=["best", "next_stage", "generation"])
