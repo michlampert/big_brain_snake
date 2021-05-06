@@ -93,7 +93,7 @@ class Brain:
         return Brain(matrices, self.functions)
 
     def mutate(self):
-        self.matrices = [m1*np.random.rand(*m1.shape) for m1 in self.matrices]
+        self.matrices = [m1*(np.random.rand(*m1.shape)*0.2 + 0.9) for m1 in self.matrices]
         return self
 
     def pso(self, best, w=0.1, c1=1.2, c2=1.2, result=0):
