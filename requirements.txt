@@ -1,0 +1,12 @@
+numpy
+random
+pickle
+math
+functools
+setuptools
+pygame
+time
+threading
+itertools
+sys
+Cython

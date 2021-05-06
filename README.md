@@ -6,6 +6,8 @@
 
 #### Written in python, with numpy and cython features
 
+`pip install -r requirements.txt` to install Python modules
+
 `py setup.py build_ext --inplace` for compile map_distance module
 
 create directory to save best brains
