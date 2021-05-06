@@ -77,8 +77,8 @@ class Brain:
 
     @staticmethod
     def random_weighted_gene(m1, m2):
-        mr = np.random.randint(2, size=m1.shape)
-        return mr*mr*m2 + (1-mr*mr)*m1
+        mr = np.random.randint(2, size=m1.shape) * np.random.randint(2, size=m1.shape)
+        return mr*m2 + (1-mr)*m1
 
     @staticmethod
     def between_gene(m1, m2):
