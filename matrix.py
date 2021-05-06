@@ -1,7 +1,7 @@
 import random
 
 class Matrix:
-    def __init__(self, m=None, *,w=None, h=None):
+    def __init__(self, m=None, *, w=None, h=None):
         if not m: m = [[random.random()*2 - 1 for c in range(w)] for r in range(h)]
 
         self.m = m

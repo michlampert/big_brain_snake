@@ -3,11 +3,13 @@ from utils import *
 import random
 from itertools import count
 
+import map_distances
+
 class Map:
     def __init__(self, w = 20, h = 20):
         self.w = w
         self.h = h
-        self.walls = [(0, i-1) for i in range(w)] + [(i-1, 0) for i in range(h)] + [(h-1, i) for i in range(w)] + [(i, w-1) for i in range(h)]
+        self.walls = set([(0, i-1) for i in range(w)] + [(i-1, 0) for i in range(h)] + [(h-1, i) for i in range(w)] + [(i, w-1) for i in range(h)])
         self.last_move = RIGHT
         self.snake = self.new_snake()
         self.apple = self.new_apple()
@@ -29,7 +31,7 @@ class Map:
 
         self.snake = [next_cell] + self.snake
 
-        if self.snake[0] in self.walls + self.snake[1:]:
+        if self.snake[0] in self.walls or self.snake[0] in self.snake[1:]:
             return len(self.snake) - 3 + self.live/100, True
 
         self.live += 1
@@ -53,25 +55,27 @@ class Map:
     def get_distances(self):
         """return list of distances to walls [<,\,^,/,>,\\,v,/], snake [<,\,^,/,>,\\,v,/] and apple [x,y]"""
 
-        wall_distances = []
-        for dir in ALL_DIRECTIONS:
-            for i in count(0):
-                v = mul_vector(dir, i)
-                if add_vectors(self.snake[0], v) in self.walls:
-                    wall_distances.append(i)
-                    break
+        # wall_distances = []
+        # for dir in ALL_DIRECTIONS:
+        #     for i in count(0):
+        #         v = mul_vector(dir, i)
+        #         if add_vectors(self.snake[0], v) in self.walls:
+        #             wall_distances.append(i)
+        #             break
 
-        snake_distances = []
-        for dir in ALL_DIRECTIONS:
-            for i in count(0):
-                v = mul_vector(dir, i)
-                if add_vectors(self.snake[0], v) in self.walls + self.snake[1:]:
-                    snake_distances.append(i)
-                    break
+        # snake_distances = []
+        # for dir in ALL_DIRECTIONS:
+        #     for i in count(0):
+        #         v = mul_vector(dir, i)
+        #         if add_vectors(self.snake[0], v) in self.walls or add_vectors(self.snake[0], v) in self.snake[1:]:
+        #             snake_distances.append(i)
+        #             break
 
-        apple_distance = add_vectors(self.apple, mul_vector(self.snake[0],-1))
+        # apple_distance = add_vectors(self.apple, mul_vector(self.snake[0],-1))
 
-        return wall_distances + snake_distances + list(apple_distance)
+        # return wall_distances + snake_distances + list(apple_distance)
+
+        return map_distances.distances(self.walls, self.snake, self.apple)
 
     def calculte_expected_result(brain, w=20, h=20, probe=100):
         """return expected points result with usage of this brain"""

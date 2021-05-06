@@ -3,11 +3,19 @@ from utils import *
 import random
 import pickle
 import math
+import numpy as np
+from functools import reduce
 
-from matrix import *
+def id(x): return x
+
+def sqrt(x): return np.sqrt(np.abs(x)) * np.sign(x)
+
+def sigmoid(x): return 1/(1-np.exp(-x))
+
+def relu(x): return x if x>0 else 0
 
 class Brain:
-    def __init__(self, genotype=None, v=None):
+    def __init__(self, matrices=None, functions=None, v=None):
         """
         Genotype should be 12 values vector approx. between -1 and 1.
         Note that weights in NN should have some symmetry, because:
@@ -17,71 +25,81 @@ class Brain:
         (https://en.wikipedia.org/wiki/Curse_of_dimensionality)
         """
 
-        if not genotype:
-            genotype = [random.random() * 2 - 1 for i in range(12)]
+        shapes = [(12,4), (6,4), (4,1)]
 
-        self.genotype = genotype
+        if not matrices:
+            matrices = [np.random.rand(*shape)*2-1 for shape in shapes]
 
-        if isinstance(genotype, list):
-            self.matrix = self.genotype_to_matrix()
-        elif isinstance(genotype, Matrix):
-            self.matrix = genotype
+        if not functions:
+            functions = [sqrt, relu, sigmoid]
+
+        self.matrices = matrices
+        self.functions = functions
+
         if not v: v = [random.random() * 2 - 1 for i in range(12)]
         self.v = v
 
-    def genotype_to_matrix(self):
-        walls, snake, apple = self.genotype[:5], self.genotype[5:10], self.genotype[10:]
-        walls = walls + walls[-2:0:-1]
-        snake = snake + snake[-2:0:-1]
-        x, y = apple
+    @staticmethod
+    def dist_to_matrix(dist):
+        w_u, w_ru, w_r, w_rd, w_d, w_ld, w_l, w_lu, s_u, s_ru, s_r, s_rd, s_d, s_ld, s_l, s_lu, a_x, a_y = dist
 
-        return  Matrix([
-                    [*walls, *snake, x, y],
-                    [*(walls[-2:] + walls[:-2]),*(snake[-2:] + snake[:-2]), y, -x],
-                    [*(walls[-4:] + walls[:-4]),*(snake[-4:] + snake[:-4]), -x, -y],
-                    [*(walls[-6:] + walls[:-6]),*(snake[-6:] + snake[:-6]), -y, x]
-                ])
+
+        dist_matrix = np.array([
+            [w_u, (w_ru+w_lu)/2, (w_r+w_l)/2, (w_rd+w_ld)/2, w_d, s_u, (s_ru+s_lu)/2, (s_r+s_l)/2, (s_rd+s_ld)/2, s_d, a_x, a_y],
+            [w_r, (w_ru+w_rd)/2, (w_u+w_d)/2, (w_lu+w_ld)/2, w_l, s_r, (s_ru+s_rd)/2, (s_u+s_d)/2, (s_lu+s_ld)/2, s_l, -a_y, a_x],
+            [w_d, (w_rd+w_ld)/2, (w_r+w_l)/2, (w_ru+w_lu)/2, w_u, s_d, (s_rd+s_ld)/2, (s_r+s_l)/2, (s_ru+s_lu)/2, s_u, -a_x, -a_y],
+            [w_l, (w_lu+w_ld)/2, (w_u+w_d)/2, (w_ru+w_rd)/2, w_r, s_l, (s_lu+s_ld)/2, (s_u+s_d)/2, (s_ru+s_rd)/2, s_r, a_y, -a_x]
+        ])
+
+        return dist_matrix
 
     def predict_move(self, map):
         dist = map.get_distances()
-        dist = [(0 if not d else (d/abs(d))*math.sqrt(abs(d))) for d in dist]
-        res = self.matrix * dist
-        idx = -1
+        dist_matrix = Brain.dist_to_matrix(dist)
+
+        res = dist_matrix
+
+        for m, f in zip(self.matrices, self.functions):
+            res = res @ f(m)
+
+        res = res.T[0].tolist()
+
         for i in range(4):
             if res[i] == max(res):
-                idx = i
-        return [LEFT, UP, RIGHT, DOWN][idx]
+                return [UP, RIGHT, DOWN, LEFT][i]
 
     @staticmethod
-    def random_gene(g1, g2):
-        return random.choice([g1,g2])
+    def random_gene(m1, m2):
+        mr = np.random.randint(2, size=m1.shape)
+        return mr*m1 + (1-mr)*m2
 
     @staticmethod
-    def random_weighted_gene(g1, g2, ratio=2/3):
-        return (g1 if (random.random() < ratio) else g2)
+    def random_weighted_gene(m1, m2):
+        mr = np.random.randint(2, size=m1.shape)
+        return mr*mr*m2 + (1-mr*mr)*m1
 
     @staticmethod
-    def between_gene(g1, g2):
-        return (g1+g2)/2
+    def between_gene(m1, m2):
+        return (m1+m2)/2
 
     @staticmethod
-    def between_weighted_gene(g1, g2, ratio=2/3):
-        return g1*ratio + g2*(1-ratio)
+    def between_weighted_gene(m1, m2, ratio=2/3):
+        return m1*ratio + m2*(1-ratio)
 
     def cross(self, other, new_gene_func = random_gene):
-        return Brain([new_gene_func(g1,g2) for g1,g2 in zip(self.genotype, other.genotype)])
+        matrices = [new_gene_func(m1,m2) for m1,m2 in zip(self.matrices, other.matrices)]
+        return Brain(matrices, self.functions)
 
     def mutate(self):
-        return Brain([g * (0.90 + (random.random() + random.random())/10) for g in self.genotype])
+        self.matrices = [m1*np.random.rand(*m1.shape) for m1 in self.matrices]
+        return self
 
-    def pso(self, best, w=0.1, c1=0.1):
+    def pso(self, best, w=0.1, c1=1, c2=1):
         if self is best: return self
-        r1 = random.random()
+        r1,r2 = random.random(),random.random()
         v = [w*vx + c1*r1*(bx-gx) for vx,bx,gx in zip(self.v, best.genotype, self.genotype)]
         genotype = [gx + vx for gx,vx in zip(self.genotype,self.v)]
         return Brain(genotype,v)
-
-
 
     def save(self, filename):
         with open(filename, "wb") as f:

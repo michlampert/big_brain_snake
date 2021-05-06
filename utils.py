@@ -6,7 +6,7 @@ LU = (-1,1)
 RU = (1,1)
 LD = (-1,-1)
 RD = (1,-1)
-ALL_DIRECTIONS = [LEFT,LU,UP,RU,RIGHT,RD,DOWN,LD]
+ALL_DIRECTIONS = [UP,RU,RIGHT,RD,DOWN,LD,LEFT,LU]
 
 def add_vectors(v1, v2):
     return (v1[0]+v2[0], v1[1]+v2[1])

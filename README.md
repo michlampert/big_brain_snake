@@ -2,9 +2,15 @@
 
 ## snake game controlled by neural network trained with genetic (and biological) algorithms
 
-### by [tmek1244](http://github.com/tmek1244) & [WojtAcht](http://github.com/WojtAcht) & [michlampert](http://github.com/michlampert)
+### by [michlampert](http://github.com/michlampert) & [WojtAcht](http://github.com/WojtAcht) & [tmek1244](http://github.com/tmek1244)
 
+#### Written in python, with numpy and cython features
 
+`py setup.py build_ext --inplace` for compile map_distance module
+
+create directory to save best brains
+
+run `py main.py` and relax
 
 ## genetic algorithm
 
