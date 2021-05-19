@@ -39,3 +39,17 @@ run `py main.py` and relax
 | <img width="1000px"> | <img width="1000px"> |
 | -- | -- |
 | snake with human input <br/> ![rys](demos/demo.gif) | snake with random moves <br/> ![rys](demos/demo1.gif) |
+
+
+
+
+## PSO algorithm
+
+| <img width="1000px"> | <img width="1000px"> | <img width="1000px"> | <img width="1000px"> |
+| -- | -- | -- | -- |
+| ![rys](demos/demo_PSO_1.gif) | ![rys](logs/logs_8.png) |
+| ![rys](demos/demo_PSO_2.gif) | ![rys](logs/logs_9.png) |
+| ![rys](demos/demo_PSO_3.gif) | ![rys](logs/logs_10.png) |
+| ![rys](demos/demo_PSO_4.gif) | ![rys](logs/logs_11.png) |
+
+
