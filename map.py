@@ -19,8 +19,8 @@ class Map:
         """return actual poins and game_over flag"""
         next_cell = (self.snake[0][0] + direction[0], self.snake[0][1] + direction[1])
 
-        if self.live == 100:
-            return len(self.snake) - 3 + self.live/100, True  
+        if self.live == max(100, 5*len(self.snake)):
+            return len(self.snake) - 3 + min(100,self.live)/100, True  
 
         if self.apple in self.snake:
             self.live = 0
@@ -32,10 +32,10 @@ class Map:
         self.snake = [next_cell] + self.snake
 
         if self.snake[0] in self.walls or self.snake[0] in self.snake[1:]:
-            return len(self.snake) - 3 + self.live/100, True
+            return len(self.snake) - 3 + min(100,self.live)/100, True
 
         self.live += 1
-        return len(self.snake) - 3 + self.live/100, False
+        return len(self.snake) - 3 + min(100,self.live)/100, False
 
     def restart(self):
         self.snake = self.new_snake()
