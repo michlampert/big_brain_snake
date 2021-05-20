@@ -25,7 +25,9 @@ class Brain:
         (https://en.wikipedia.org/wiki/Curse_of_dimensionality)
         """
 
-        shapes = [(12,6), (6,4), (4,1)]
+
+        # shapes = [(12,6), (6,4), (4,1)]
+        shapes = [(12,4), (4,1)]
 
         if not matrices:
             matrices = [np.random.rand(*shape)*2-1 for shape in shapes]
