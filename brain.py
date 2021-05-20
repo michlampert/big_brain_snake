@@ -110,7 +110,9 @@ class Brain:
         global_best_matrices = best.matrices
         
         lr = 0.5
-        new_v = lambda m_v, x, m_lb, m_gb: m_v * w + (m_lb - x) * random.random() * c1 + (m_gb - x) * random.random() * c2 
+        r1 = random.random()
+        r2 = random.random()
+        new_v = lambda m_v, x, m_lb, m_gb: m_v * w + (m_lb - x) * r1 * c1 + (m_gb - x) * r2 * c2 
         self.v = [new_v(m_v, x, m_lb, m_gb) for m_v, x, m_lb, m_gb in zip(self.v, self.matrices, local_best_matrices, global_best_matrices)]
         self.matrices = [m_m + lr * m_v for m_m, m_v in zip(self.matrices, self.v)]
         
