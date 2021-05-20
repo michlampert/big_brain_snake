@@ -2,7 +2,9 @@
 
 - [x] 1-11 stare implementacje, nawet nie da się za bardzo ich powiązać z aktualnym kodem (wersja 7 dała dobre wyniki) `outdated`
 - [x] 12-13 wielowarstwowe sieci, z innymi wymiarami i funkcjami aktywacji
+
 <br/>
+
 - [ ] 14 - genetyczny - rand_gene - przeliczyć jeszcze raz po poprawce
 - [ ] 15 - genetyczny - mid_gene - przeliczyć jeszcze raz po poprawce
 - [x] 16 - PSO - 0.1;1;1
