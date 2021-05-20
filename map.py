@@ -9,7 +9,7 @@ class Map:
     def __init__(self, w = 20, h = 20):
         self.w = w
         self.h = h
-        self.walls = set([(0, i-1) for i in range(w)] + [(i-1, 0) for i in range(h)] + [(h-1, i) for i in range(w)] + [(i, w-1) for i in range(h)])
+        self.walls = set([(0, i-1) for i in range(h)] + [(i-1, 0) for i in range(w)] + [(w-1, i) for i in range(h)] + [(i, h-1) for i in range(w)])
         self.last_move = RIGHT
         self.snake = self.new_snake()
         self.apple = self.new_apple()
